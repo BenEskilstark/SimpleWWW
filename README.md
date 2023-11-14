@@ -29,7 +29,9 @@ whenever you make changes.
     - Use ```<stateful-client>``` tags wrapped around all children that should share state.
     - In html, you can dispatch the slightly more complicated way:
       ```html
+      <stateful-client>
         <button onclick="this.closest('stateful-client').dispatch({type: 'TURN'})">
+      <\stateful-client>
       ```
     - Or in custom components, you can grab references to the store functions by calling
       this function in connectedCallback:
