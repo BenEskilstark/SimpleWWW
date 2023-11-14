@@ -1,11 +1,10 @@
-import {useReducer} from './store.js';
-import {rootReducer, initState} from './rootReducer.js';
+import {useReducer} from '../state/store.js';
+import {rootReducer, initState} from '../state/rootReducer.js';
 
 export default class StatefulClient extends HTMLElement {
   constructor() {
     super();
     const [getState, dispatch, subscribe, unsubscribe] = useReducer(rootReducer, initState());
-    subscribe(console.log);
     this.getState = getState;
     this.dispatch = dispatch;
     this.subscribe = subscribe;

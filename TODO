@@ -1,0 +1,4 @@
+
+  - Need more succinct way to access dispatch, getState, etc. from within html
+  - More streamlined way to create new html web components than having to do the
+    register state/(un)subscribe rigamarole
