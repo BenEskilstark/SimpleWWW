@@ -15,7 +15,7 @@ whenever you make changes.
 
 ## Two ways to do high level app organization:
 
-1. Simple html and global state:
+1. **Simple html and global state:**
     - ```import {getState, dispatch} from 'state/store.js'``` anywhere to access a singleton
       version of the state that is global to everything on the webpage.
     - Super simple to set up, and anyone who has a reference to dispatch can trigger
@@ -23,7 +23,7 @@ whenever you make changes.
       ```html
       <button onclick="dispatch({type: 'TURN'})">End Turn</button>
       ```
-    - register callbacks for whenever state changes with ```subscribe``` also from store.js. Subscribe returns a token that you pass to ```unsubscribe``` when you're done. Same as like ```setTimeout``` and ```clearTimeout```:
+    - register callbacks for whenever state changes with ```subscribe((state) => {})``` also from store.js. Subscribe returns a token that you pass to ```unsubscribe``` when you're done. Same as like ```setInterval``` and ```clearInterval```:
         ```javascript
         import {dispatch, subscribe, unsubscribe} from './state/store.js';
         const sub = subscribe(console.log);
@@ -34,7 +34,7 @@ whenever you make changes.
         // no console log
         ```
 
-2. StatefulClient for independent state in different parts of the application
+2. **StatefulClient for independent state in different parts of the application**
     - Use ```<stateful-client>``` tags wrapped around all children that should share state.
     - In html, you can dispatch the slightly more complicated way:
       ```html
