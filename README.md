@@ -24,7 +24,7 @@ whenever you make changes.
       <button onclick="dispatch({type: 'TURN'})">End Turn</button>
       ```
     - register callbacks for whenever state changes with ```subscribe``` also from store.js. Subscribe returns a token that you pass to ```unsubscribe``` when you're done. Same as like ```setTimeout``` and ```clearTimeout```:
-    ```javascript
+        ```javascript
         import {dispatch, subscribe, unsubscribe} from './state/store.js';
         const sub = subscribe(console.log);
         dispatch({hello: "world"});
@@ -32,7 +32,7 @@ whenever you make changes.
         unsubscribe(sub);
         dispatch({foo: 'bar'});
         // no console log
-    ```
+        ```
 
 2. StatefulClient for independent state in different parts of the application
     - Use ```<stateful-client>``` tags wrapped around all children that should share state.
