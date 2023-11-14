@@ -21,7 +21,7 @@ Two ways to do high level app organization:
     - Super simple to set up, and anyone who has a reference to dispatch can trigger
       a state update. (ie window.dispatch in index.js and then in html you can have:
       ```html
-    <button onclick="dispatch({type: 'TURN'})">End Turn</button>
+      <button onclick="dispatch({type: 'TURN'})">End Turn</button>
       ```
     - register callbacks for whenever state changes with ```subscribe``` also from store.js. Subscribe returns a token that you pass to ```unsubscribe``` when you're done. Same as like ```setTimeout``` and ```clearTimeout```
 
@@ -41,4 +41,5 @@ Two ways to do high level app organization:
       }
       ```
       See GameBoard.js for how this is used in practice
+
 
