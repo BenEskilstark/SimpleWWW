@@ -1,0 +1,16 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+stateful-client {
+  display: inline-block;
+  width: fit-content;
+}
+
+game-board {
+  display: block;
+  width: 500;
+  height: 500;
+  border: 1px solid black;
+}
