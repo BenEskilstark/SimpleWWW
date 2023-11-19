@@ -42,13 +42,5 @@ whenever you make changes.
         <button onclick="this.closest('stateful-client').dispatch({type: 'TURN'})">
       <\stateful-client>
       ```
-    - Or in custom components, you can grab references to the store functions by calling
-      this function in connectedCallback:
-      ```javascript
-      registerState() {
-        const storeEvent = new CustomEvent('requestStore', {bubbles: true, detail: {}});
-        this.dispatchEvent(storeEvent);
-        Object.assign(this, storeEvent.detail);
-      }
-      ```
-      See GameBoard.js for how this is used in practice
+    - And in custom components, you can have them extend StatefulHTML to get access to
+      dispatch, getState, etc. and override an onChange method that fires whenever state changes.

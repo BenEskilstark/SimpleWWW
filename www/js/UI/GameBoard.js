@@ -1,24 +1,12 @@
+import StatefulHTML from './StatefulHTML.js';
 
-export default class GameBoard extends HTMLElement {
-  token = null;
 
+export default class GameBoard extends StatefulHTML {
   connectedCallback() {
-    this.registerState();
     const width = parseInt(this.getAttribute("width"));
     const height = parseInt(this.getAttribute("height"));
     this.dispatch({width, height});
-    this.token = this.subscribe(this.onChange.bind(this))
     this.render(this.getState());
-  }
-
-  registerState() {
-    const storeEvent = new CustomEvent('requestStore', {bubbles: true, detail: {}});
-    this.dispatchEvent(storeEvent);
-    Object.assign(this, storeEvent.detail);
-  }
-
-  disconnectedCallback() {
-    unsubscribe(this.token);
   }
 
   render(state) {

@@ -1,14 +1,3 @@
 
   - Need more succinct way to access dispatch, getState, etc. from within html
-  - More streamlined way to create new html web components than having to do the
-    register state/(un)subscribe rigamarole
 
-  - Merge with web socket server
-    - Add Lobby page and Game page? How would this interact with the sockets?
-      - Could join the game page and provide its clientID so the server can pick it back up?
-  - Add an AI tag that places pieces at random on its turn
-  - Implement Go liberty rules
-  - Add switch for turn-based vs real-time 
-    - turn-based ends your turn whenever you place a piece
-    - real-time queues up placements made not on your own turn and then
-      dispatches them if they are legal on your turn
